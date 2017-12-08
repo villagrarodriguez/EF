@@ -192,7 +192,7 @@ public class Tiendita extends javax.swing.JFrame {
         pblEquiposMovilles = new javax.swing.JScrollPane();
         lstEquiposMoviles = new javax.swing.JList();
         lblTEquiposMoviles = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        niidea = new javax.swing.JLabel();
         spPlanesPostpago = new javax.swing.JSpinner();
         lblDescripcion = new javax.swing.JLabel();
         plCaracteristicas = new javax.swing.JPanel();
@@ -208,7 +208,7 @@ public class Tiendita extends javax.swing.JFrame {
         lblProcesador = new javax.swing.JLabel();
         lblTProcesador = new javax.swing.JLabel();
         lblProcesadorImg = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        lblbebeficio = new javax.swing.JLabel();
         plBeneficiosPlan = new javax.swing.JPanel();
         plMinutos = new javax.swing.JPanel();
         lblMinutosT = new javax.swing.JLabel();
@@ -222,8 +222,6 @@ public class Tiendita extends javax.swing.JFrame {
         plSMS = new javax.swing.JPanel();
         lblSMST = new javax.swing.JLabel();
         lblSMS = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jbCompra = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -235,6 +233,15 @@ public class Tiendita extends javax.swing.JFrame {
         });
 
         lstEquiposMoviles.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        lstEquiposMoviles.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                lstEquiposMovilesAncestorAdded(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
         lstEquiposMoviles.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
             public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
                 lstEquiposMovilesValueChanged(evt);
@@ -245,8 +252,8 @@ public class Tiendita extends javax.swing.JFrame {
         lblTEquiposMoviles.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         lblTEquiposMoviles.setText("EQUIPOS DISPONIBLES");
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 40)); // NOI18N
-        jLabel1.setText("TIENDA CLARO");
+        niidea.setFont(new java.awt.Font("Dialog", 1, 40)); // NOI18N
+        niidea.setText("TIENDA CLARO");
 
         spPlanesPostpago.setFont(new java.awt.Font("Dialog", 1, 30)); // NOI18N
         spPlanesPostpago.setModel(new javax.swing.SpinnerListModel(new String[] {"Claro MAX 99", "Claro MAX 149", "Claro MAX 189"}));
@@ -351,8 +358,8 @@ public class Tiendita extends javax.swing.JFrame {
 
         plCaracteristicas.add(plProcesador);
 
-        jLabel2.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
-        jLabel2.setText("¡Elige el mejor plan para ti!");
+        lblbebeficio.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        lblbebeficio.setText("¡Elige el mejor plan para ti!");
 
         java.awt.GridBagLayout plBeneficiosPlanLayout = new java.awt.GridBagLayout();
         plBeneficiosPlanLayout.columnWidths = new int[] {0, 4, 0};
@@ -432,10 +439,6 @@ public class Tiendita extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(21, 29, 21, 29);
         plBeneficiosPlan.add(plSMS, gridBagConstraints);
 
-        jLabel3.setText("Precio:");
-
-        jLabel4.setText("S/.2700");
-
         jbCompra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/11.jpg"))); // NOI18N
         jbCompra.setBorder(null);
         jbCompra.setBorderPainted(false);
@@ -459,69 +462,56 @@ public class Tiendita extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(25, 25, 25)
+                .addComponent(niidea)
+                .addGap(158, 158, 158)
+                .addComponent(lblDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(455, 455, 455)
-                        .addComponent(lblDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(lblTEquiposMoviles)
-                    .addComponent(jLabel1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(295, 295, 295)
-                        .addComponent(plCaracteristicas, javax.swing.GroupLayout.PREFERRED_SIZE, 790, javax.swing.GroupLayout.PREFERRED_SIZE))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(280, 280, 280)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(360, 360, 360)
+                    .addComponent(pblEquiposMovilles, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(70, 70, 70)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(spPlanesPostpago, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(plCaracteristicas, javax.swing.GroupLayout.PREFERRED_SIZE, 790, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jbCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(127, 127, 127)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(30, 30, 30)
-                                .addComponent(jLabel4)))))
-                .addGap(71, 71, 71)
-                .addComponent(plBeneficiosPlan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(pblEquiposMovilles, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(100, 100, 100)
+                        .addComponent(lblbebeficio, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(spPlanesPostpago, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(81, 81, 81)
+                        .addComponent(plBeneficiosPlan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(630, 630, 630)
+                        .addComponent(jbCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(niidea)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(45, 45, 45)
-                        .addComponent(lblDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(82, 82, 82)
-                        .addComponent(lblTEquiposMoviles))
-                    .addComponent(jLabel1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(105, 105, 105)
-                        .addComponent(plCaracteristicas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(31, 31, 31)
-                .addComponent(jLabel2)
-                .addGap(33, 33, 33)
+                        .addComponent(lblDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(8, 8, 8)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(spPlanesPostpago, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(67, 67, 67)
+                        .addComponent(lblTEquiposMoviles, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(pblEquiposMovilles, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(plCaracteristicas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(41, 41, 41)
+                        .addComponent(lblbebeficio)
+                        .addGap(43, 43, 43)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jbCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel4)))))
-                    .addComponent(plBeneficiosPlan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(170, 170, 170)
-                .addComponent(pblEquiposMovilles, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(30, 30, 30)
+                                .addComponent(spPlanesPostpago, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(plBeneficiosPlan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(20, 20, 20)
+                        .addComponent(jbCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
 
         pack();
@@ -655,6 +645,14 @@ p.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_lblDescripcionAncestorAdded
 
+    private void lstEquiposMovilesAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_lstEquiposMovilesAncestorAdded
+    
+
+
+
+// TODO add your handling code here:
+    }//GEN-LAST:event_lstEquiposMovilesAncestorAdded
+
     /**
      * @param args the command line arguments
      */
@@ -694,10 +692,6 @@ p.setVisible(true);
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JButton jbCompra;
     private javax.swing.JLabel lblCamara;
     private javax.swing.JLabel lblCamaraImg;
@@ -718,7 +712,9 @@ p.setVisible(true);
     private javax.swing.JLabel lblTEquiposMoviles;
     private javax.swing.JLabel lblTPantalla;
     private javax.swing.JLabel lblTProcesador;
+    private javax.swing.JLabel lblbebeficio;
     private javax.swing.JList lstEquiposMoviles;
+    private javax.swing.JLabel niidea;
     private javax.swing.JScrollPane pblEquiposMovilles;
     private javax.swing.JPanel plBeneficiosPlan;
     private javax.swing.JPanel plCamara;
