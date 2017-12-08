@@ -60,11 +60,8 @@ public class Main {
 "    }\n" +
 "  ]", TelefonoMovil[].class); 
         // ==> ints2 will be same as ints
-        
-        for (int i = 0; i < ints2.length; i++) {
-            
-            System.out.println("Nombre : " + ints2[i].getDescripcion() );
-            
+        for (TelefonoMovil ints21 : ints2) {
+            System.out.println("Nombre : " + ints21.getDescripcion());
         }
         
     }

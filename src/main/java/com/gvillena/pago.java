@@ -5,6 +5,9 @@
  */
 package com.gvillena;
 
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author alumno
@@ -16,6 +19,9 @@ public class pago extends javax.swing.JFrame {
      */
     public pago() {
         initComponents();
+        setLocationRelativeTo(null);
+        setResizable(false);
+        setTitle("Pagos Onlain");
     }
 
     /**
@@ -40,11 +46,13 @@ public class pago extends javax.swing.JFrame {
         lbAceptamos = new javax.swing.JLabel();
         spCiudad = new javax.swing.JSpinner();
         lbCiudad = new javax.swing.JLabel();
-        btnOtrometodopag = new javax.swing.JToggleButton();
-        btnCofirmarPago = new javax.swing.JToggleButton();
         lbImagenVisa = new javax.swing.JLabel();
         lbMensajeConfirmar = new javax.swing.JLabel();
-        lbImagenTarjetas = new javax.swing.JLabel();
+        jbtnvolver = new javax.swing.JButton();
+        btnOtrometodopag1 = new javax.swing.JToggleButton();
+        tipostj = new javax.swing.JLabel();
+        jlblimagt = new javax.swing.JLabel();
+        jtiptarjet = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -71,122 +79,197 @@ public class pago extends javax.swing.JFrame {
         lbCiudad.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         lbCiudad.setText("Seleccione Ciudad");
 
-        btnOtrometodopag.setText("Otro Metodo de Pago");
-
-        btnCofirmarPago.setText("Confirmar Pedido");
-
-        lbImagenVisa.setIcon(new javax.swing.ImageIcon("C:\\Users\\Alumno\\Desktop\\1508430842166 (2).jpg")); // NOI18N
-
         lbMensajeConfirmar.setFont(new java.awt.Font("MS Reference Sans Serif", 1, 10)); // NOI18N
         lbMensajeConfirmar.setForeground(new java.awt.Color(255, 0, 51));
         lbMensajeConfirmar.setText("Confirm your order of 32,66 $ by clicking the button \"Confirm my order\"");
 
-        lbImagenTarjetas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/gvillena/visaaaaaaaaaaaaaa (1).png"))); // NOI18N
+        jbtnvolver.setText("Volver");
+        jbtnvolver.setBorder(null);
+        jbtnvolver.setBorderPainted(false);
+        jbtnvolver.setContentAreaFilled(false);
+        jbtnvolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jbtnvolver.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jbtnvolver.setIconTextGap(-3);
+        jbtnvolver.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jbtnvolver.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jbtnvolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnvolverActionPerformed(evt);
+            }
+        });
+
+        btnOtrometodopag1.setText("Comprar");
+        btnOtrometodopag1.setBorder(null);
+        btnOtrometodopag1.setBorderPainted(false);
+        btnOtrometodopag1.setContentAreaFilled(false);
+        btnOtrometodopag1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOtrometodopag1.setDoubleBuffered(true);
+        btnOtrometodopag1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnOtrometodopag1.setIconTextGap(-3);
+        btnOtrometodopag1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        btnOtrometodopag1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnOtrometodopag1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOtrometodopag1ActionPerformed(evt);
+            }
+        });
+
+        tipostj.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Untitled2.jpg"))); // NOI18N
+
+        jlblimagt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Scousha.jpg"))); // NOI18N
+
+        jtiptarjet.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jtiptarjet.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Otros Metodos de Pago", "Visa", "Master Card", "Interbank", "BCP" }));
+        jtiptarjet.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtiptarjetActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(83, 83, 83)
-                .addComponent(btnOtrometodopag)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnCofirmarPago)
-                .addGap(176, 176, 176))
-            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addGap(10, 10, 10)
                         .addComponent(lbPagoConTarjeta))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(lbMensajeConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 514, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(20, 20, 20)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbAceptamos)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(60, 60, 60)
+                                .addComponent(tipostj, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lbNombre)
+                            .addComponent(lbNumeroTarjeta)
+                            .addComponent(lbCodigoSeguridad)
+                            .addComponent(lbCaducidad)
+                            .addComponent(lbCiudad))
+                        .addGap(30, 30, 30)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(etNombreTitular, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(etNumeroTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(etCodigoSeguridad, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(etMes, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(44, 44, 44)
+                                .addComponent(etDia, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(spCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(60, 60, 60)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(161, 161, 161)
+                                .addComponent(lbImagenVisa))
+                            .addComponent(jlblimagt, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lbAceptamos)))
+                        .addGap(40, 40, 40)
+                        .addComponent(jtiptarjet, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(lbMensajeConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 514, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 36, Short.MAX_VALUE)
-                        .addComponent(lbImagenTarjetas)
-                        .addGap(272, 272, 272))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbCaducidad)
-                            .addComponent(lbCiudad)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lbNombre)
-                                    .addComponent(lbNumeroTarjeta))
-                                .addGap(58, 58, 58)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(spCiudad)
-                                    .addComponent(etNumeroTarjeta, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
-                                    .addComponent(etNombreTitular)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(etMes, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(etDia, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lbCodigoSeguridad)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(etCodigoSeguridad, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addComponent(lbImagenVisa)
-                .addGap(135, 135, 135))
+                .addGap(20, 20, 20)
+                .addComponent(jbtnvolver, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnOtrometodopag1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(61, 61, 61))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(13, 13, 13)
                 .addComponent(lbPagoConTarjeta)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lbAceptamos)
+                .addGap(11, 11, 11)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(lbAceptamos)
+                        .addGap(16, 16, 16)
+                        .addComponent(tipostj)
+                        .addGap(11, 11, 11)
+                        .addComponent(lbNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(lbNumeroTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)
-                        .addComponent(lbImagenTarjetas)
-                        .addGap(28, 28, 28)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lbNombre)
-                            .addComponent(etNombreTitular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lbNumeroTarjeta)
-                            .addComponent(etNumeroTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lbCodigoSeguridad)
-                            .addComponent(etCodigoSeguridad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(15, 15, 15)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lbCaducidad)
+                        .addComponent(lbCodigoSeguridad, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(lbCaducidad, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(lbCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(62, 62, 62)
+                        .addComponent(etNombreTitular, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(etNumeroTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(etCodigoSeguridad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(etMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(etDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lbCiudad)
-                            .addComponent(spCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(38, 38, 38)
-                        .addComponent(lbMensajeConfirmar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(btnOtrometodopag)
-                                .addGap(25, 25, 25))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(btnCofirmarPago)
-                                .addGap(23, 23, 23))))
+                        .addGap(20, 20, 20)
+                        .addComponent(spCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lbImagenVisa, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(lbImagenVisa, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGap(72, 72, 72)
+                        .addComponent(jlblimagt, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(40, 40, 40)
+                .addComponent(jtiptarjet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(19, 19, 19)
+                .addComponent(lbMensajeConfirmar)
+                .addGap(16, 16, 16)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jbtnvolver, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnOtrometodopag1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnOtrometodopag1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOtrometodopag1ActionPerformed
+        JOptionPane.showMessageDialog(null, "Gracias Por Comprar");
+        dispose();
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnOtrometodopag1ActionPerformed
+
+    private void jbtnvolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnvolverActionPerformed
+        Tiendita obj=new Tiendita();
+        obj.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jbtnvolverActionPerformed
+
+    private void jtiptarjetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtiptarjetActionPerformed
+            int item=jtiptarjet.getSelectedIndex();
+            
+            switch (item){
+                case 1:
+                    ImageIcon imagen= new ImageIcon(this.getClass().getResource("/img/Untitled3_1.jpg"));
+                    jlblimagt.setIcon(imagen);
+                    
+                    break;
+                    
+                case 2:
+                    ImageIcon imagen1= new ImageIcon(this.getClass().getResource("/img/MC.jpg"));
+                    jlblimagt.setIcon(imagen1);
+                    
+                    break;
+                case 3:
+                    ImageIcon imagen2= new ImageIcon(this.getClass().getResource("/img/IBK.jpg"));
+                    jlblimagt.setIcon(imagen2);
+                    
+                    break;
+                case 4:
+                    ImageIcon imagen3= new ImageIcon(this.getClass().getResource("/img/bcp.jpg"));
+                    jlblimagt.setIcon(imagen3);
+                    
+                    break;    
+            }
+// TODO add your handling code here:
+    }//GEN-LAST:event_jtiptarjetActionPerformed
 
     /**
      * @param args the command line arguments
@@ -224,23 +307,25 @@ public class pago extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton btnCofirmarPago;
-    private javax.swing.JToggleButton btnOtrometodopag;
+    private javax.swing.JToggleButton btnOtrometodopag1;
     private javax.swing.JTextField etCodigoSeguridad;
     private javax.swing.JTextField etDia;
     private javax.swing.JTextField etMes;
     private javax.swing.JTextField etNombreTitular;
     private javax.swing.JTextField etNumeroTarjeta;
+    private javax.swing.JButton jbtnvolver;
+    private javax.swing.JLabel jlblimagt;
+    private javax.swing.JComboBox<String> jtiptarjet;
     private javax.swing.JLabel lbAceptamos;
     private javax.swing.JLabel lbCaducidad;
     private javax.swing.JLabel lbCiudad;
     private javax.swing.JLabel lbCodigoSeguridad;
-    private javax.swing.JLabel lbImagenTarjetas;
     private javax.swing.JLabel lbImagenVisa;
     private javax.swing.JLabel lbMensajeConfirmar;
     private javax.swing.JLabel lbNombre;
     private javax.swing.JLabel lbNumeroTarjeta;
     private javax.swing.JLabel lbPagoConTarjeta;
     private javax.swing.JSpinner spCiudad;
+    private javax.swing.JLabel tipostj;
     // End of variables declaration//GEN-END:variables
 }

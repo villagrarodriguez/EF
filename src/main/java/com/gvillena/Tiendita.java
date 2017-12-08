@@ -28,7 +28,7 @@ import javax.swing.SpinnerListModel;
  *
  * @author alumno
  */
-public class MainForm extends javax.swing.JFrame {
+public class Tiendita extends javax.swing.JFrame {
 
     ArrayList<TelefonoMovil> ListaTelefonosMoviles;
     ArrayList<PlanPostPago> ListaPlanesPostPago;
@@ -51,8 +51,8 @@ public class MainForm extends javax.swing.JFrame {
         plan03 = new PlanPostPago();
         
         // CLARO MAX 99        
-        plan01.setCodigoPlan("CMX99");
-        plan01.setNombrePlan("Claro MAX 99");
+        plan01.setCodigoPlan("CMX89");
+        plan01.setNombrePlan("Claro MAX 9");
         plan01.setInternet(500);
         plan01.setMinutos(1000);        
         plan01.setRpc(10000);   
@@ -94,17 +94,20 @@ public class MainForm extends javax.swing.JFrame {
             writer.jsonValue(json);
             writer.flush();
         } catch (IOException ex) {
-            Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Tiendita.class.getName()).log(Level.SEVERE, null, ex);
         }        
     }
-                
+      //          
     /**
      * Creates new form MainForm
      */
-    public MainForm() {
+    public Tiendita() {
         
         initComponents();
 
+        setLocationRelativeTo(null);
+        setResizable(false);
+        setTitle("Bienvenido ");
         // Inicializando
         ListaTelefonosMoviles = new ArrayList<TelefonoMovil>();
         ListaPlanesPostPago = new ArrayList<PlanPostPago>();                                      
@@ -136,7 +139,7 @@ public class MainForm extends javax.swing.JFrame {
             jsonPlanes = sbPlanes.toString();
             
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Tiendita.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         // 
@@ -199,8 +202,8 @@ public class MainForm extends javax.swing.JFrame {
         lblTPantalla = new javax.swing.JLabel();
         plCamara = new javax.swing.JPanel();
         lblCamara = new javax.swing.JLabel();
-        lblTCamara = new javax.swing.JLabel();
         lblCamaraImg = new javax.swing.JLabel();
+        lblTCamara = new javax.swing.JLabel();
         plProcesador = new javax.swing.JPanel();
         lblProcesador = new javax.swing.JLabel();
         lblTProcesador = new javax.swing.JLabel();
@@ -224,6 +227,7 @@ public class MainForm extends javax.swing.JFrame {
         jbCompra = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(166, 37, 37));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -255,6 +259,15 @@ public class MainForm extends javax.swing.JFrame {
         lblDescripcion.setFont(new java.awt.Font("Dialog", 1, 48)); // NOI18N
         lblDescripcion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblDescripcion.setText("TELEFONO MOVIL");
+        lblDescripcion.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                lblDescripcionAncestorAdded(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
 
         plPantalla.setPreferredSize(new java.awt.Dimension(250, 159));
         plPantalla.setLayout(new java.awt.GridBagLayout());
@@ -293,28 +306,15 @@ public class MainForm extends javax.swing.JFrame {
 
         lblCamara.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         lblCamara.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblCamara.setText("-");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.insets = new java.awt.Insets(0, 6, 0, 6);
-        plCamara.add(lblCamara, gridBagConstraints);
+        lblCamara.setText("          -");
+        plCamara.add(lblCamara, new java.awt.GridBagConstraints());
+
+        lblCamaraImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon-camara.png"))); // NOI18N
+        plCamara.add(lblCamaraImg, new java.awt.GridBagConstraints());
 
         lblTCamara.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         lblTCamara.setText("CAMARA");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 1;
-        plCamara.add(lblTCamara, gridBagConstraints);
-
-        lblCamaraImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon-camara.png"))); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.insets = new java.awt.Insets(0, 12, 0, 12);
-        plCamara.add(lblCamaraImg, gridBagConstraints);
+        plCamara.add(lblTCamara, new java.awt.GridBagConstraints());
 
         plCaracteristicas.add(plCamara);
 
@@ -436,7 +436,17 @@ public class MainForm extends javax.swing.JFrame {
 
         jLabel4.setText("S/.2700");
 
-        jbCompra.setText("COMPRAR");
+        jbCompra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/11.jpg"))); // NOI18N
+        jbCompra.setBorder(null);
+        jbCompra.setBorderPainted(false);
+        jbCompra.setContentAreaFilled(false);
+        jbCompra.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jbCompra.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jbCompra.setIconTextGap(-3);
+        jbCompra.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/12.jpg"))); // NOI18N
+        jbCompra.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/13.jpg"))); // NOI18N
+        jbCompra.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jbCompra.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jbCompra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbCompraActionPerformed(evt);
@@ -450,72 +460,68 @@ public class MainForm extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(455, 455, 455)
+                        .addComponent(lblDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblTEquiposMoviles)
                     .addComponent(jLabel1)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(295, 295, 295)
+                        .addComponent(plCaracteristicas, javax.swing.GroupLayout.PREFERRED_SIZE, 790, javax.swing.GroupLayout.PREFERRED_SIZE))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(280, 280, 280)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(360, 360, 360)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(spPlanesPostpago, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jbCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(127, 127, 127)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(pblEquiposMovilles, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblTEquiposMoviles))
-                        .addGap(26, 26, 26)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(154, 154, 154)
-                                        .addComponent(jLabel2))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(spPlanesPostpago, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(149, 149, 149)
-                                                .addComponent(jLabel3)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(jLabel4)))
-                                        .addGap(30, 30, 30)
-                                        .addComponent(plBeneficiosPlan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(plCaracteristicas, javax.swing.GroupLayout.PREFERRED_SIZE, 790, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(204, 204, 204)
-                                .addComponent(lblDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(83, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jbCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(792, 792, 792))
+                                .addGap(30, 30, 30)
+                                .addComponent(jLabel4)))))
+                .addGap(71, 71, 71)
+                .addComponent(plBeneficiosPlan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(pblEquiposMovilles, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(jLabel1)
-                .addGap(30, 30, 30)
-                .addComponent(lblTEquiposMoviles)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(pblEquiposMovilles, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(45, 45, 45)
+                        .addComponent(lblDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(82, 82, 82)
+                        .addComponent(lblTEquiposMoviles))
+                    .addComponent(jLabel1)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(105, 105, 105)
+                        .addComponent(plCaracteristicas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(31, 31, 31)
+                .addComponent(jLabel2)
+                .addGap(33, 33, 33)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(spPlanesPostpago, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(67, 67, 67)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(plBeneficiosPlan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(spPlanesPostpago, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(40, 40, 40)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(jLabel3)
-                                            .addComponent(jLabel4))))
-                                .addGap(43, 43, 43))
+                            .addComponent(jbCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(plCaracteristicas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 278, Short.MAX_VALUE)))
-                        .addComponent(jbCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(33, 33, 33))))
+                                .addGap(10, 10, 10)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel4)))))
+                    .addComponent(plBeneficiosPlan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(170, 170, 170)
+                .addComponent(pblEquiposMovilles, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -640,9 +646,14 @@ public class MainForm extends javax.swing.JFrame {
 
 
 pago p=new pago();
- p.setVisible(true);
+p.setVisible(true);
+ dispose();
         // TODO add your handling code here:
     }//GEN-LAST:event_jbCompraActionPerformed
+
+    private void lblDescripcionAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_lblDescripcionAncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblDescripcionAncestorAdded
 
     /**
      * @param args the command line arguments
@@ -661,21 +672,22 @@ pago p=new pago();
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Tiendita.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Tiendita.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Tiendita.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Tiendita.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new MainForm().setVisible(true);
+                new Tiendita().setVisible(true);
             }
         });
     }
