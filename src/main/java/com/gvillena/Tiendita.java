@@ -52,7 +52,7 @@ public class Tiendita extends javax.swing.JFrame {
         
         // CLARO MAX 99        
         plan01.setCodigoPlan("CMX89");
-        plan01.setNombrePlan("Claro MAX 9");
+        plan01.setNombrePlan("Claro MAX 99");
         plan01.setInternet(500);
         plan01.setMinutos(1000);        
         plan01.setRpc(10000);   
@@ -104,7 +104,7 @@ public class Tiendita extends javax.swing.JFrame {
     public Tiendita() {
         
         initComponents();
-
+            
         setLocationRelativeTo(null);
         setResizable(false);
         setTitle("Bienvenido ");
@@ -223,6 +223,8 @@ public class Tiendita extends javax.swing.JFrame {
         lblSMST = new javax.swing.JLabel();
         lblSMS = new javax.swing.JLabel();
         jbCompra = new javax.swing.JButton();
+        labelprecio = new javax.swing.JLabel();
+        jnombreprecio = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(166, 37, 37));
@@ -439,15 +441,13 @@ public class Tiendita extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(21, 29, 21, 29);
         plBeneficiosPlan.add(plSMS, gridBagConstraints);
 
-        jbCompra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/11.jpg"))); // NOI18N
+        jbCompra.setText("Comprar");
         jbCompra.setBorder(null);
         jbCompra.setBorderPainted(false);
         jbCompra.setContentAreaFilled(false);
         jbCompra.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jbCompra.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jbCompra.setIconTextGap(-3);
-        jbCompra.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/12.jpg"))); // NOI18N
-        jbCompra.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/13.jpg"))); // NOI18N
         jbCompra.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jbCompra.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jbCompra.addActionListener(new java.awt.event.ActionListener() {
@@ -455,6 +455,10 @@ public class Tiendita extends javax.swing.JFrame {
                 jbCompraActionPerformed(evt);
             }
         });
+
+        labelprecio.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        jnombreprecio.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -471,7 +475,7 @@ public class Tiendita extends javax.swing.JFrame {
                     .addComponent(lblTEquiposMoviles)
                     .addComponent(pblEquiposMovilles, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(70, 70, 70)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(plCaracteristicas, javax.swing.GroupLayout.PREFERRED_SIZE, 790, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(100, 100, 100)
@@ -482,8 +486,15 @@ public class Tiendita extends javax.swing.JFrame {
                         .addGap(81, 81, 81)
                         .addComponent(plBeneficiosPlan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(630, 630, 630)
-                        .addComponent(jbCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(100, 100, 100)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(70, 70, 70)
+                                .addComponent(labelprecio, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jnombreprecio, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jbCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(82, 82, 82))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -510,8 +521,15 @@ public class Tiendita extends javax.swing.JFrame {
                                 .addGap(30, 30, 30)
                                 .addComponent(spPlanesPostpago, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(plBeneficiosPlan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(20, 20, 20)
-                        .addComponent(jbCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(70, 70, 70)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelprecio, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jnombreprecio, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(52, 52, 52)
+                                .addComponent(jbCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))))
         );
 
         pack();
@@ -552,7 +570,19 @@ public class Tiendita extends javax.swing.JFrame {
                 lblPantalla.setText(pantalla);
                 lblCamara.setText(camara);
                 lblProcesador.setText(procesador);
-                        
+            switch (indiceSeleccionado){
+                
+                  case 0:
+                      labelprecio.setText("Precio :");
+                    labelprecio.setText("S/ 3.200");
+                    break;
+                  case 1:
+                       labelprecio.setText("Precio :");
+                    labelprecio.setText("S/ 2.530");
+                    break;
+                    
+            }
+             
             }
         }
         
@@ -693,16 +723,18 @@ p.setVisible(true);
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jbCompra;
-    private javax.swing.JLabel lblCamara;
+    private javax.swing.JLabel jnombreprecio;
+    public static javax.swing.JLabel labelprecio;
+    public static javax.swing.JLabel lblCamara;
     private javax.swing.JLabel lblCamaraImg;
-    private javax.swing.JLabel lblDescripcion;
+    public static javax.swing.JLabel lblDescripcion;
     private javax.swing.JLabel lblInternet;
     private javax.swing.JLabel lblInternetT;
     private javax.swing.JLabel lblMinutos;
     private javax.swing.JLabel lblMinutosT;
-    private javax.swing.JLabel lblPantalla;
+    public static javax.swing.JLabel lblPantalla;
     private javax.swing.JLabel lblPantallaImg;
-    private javax.swing.JLabel lblProcesador;
+    public static javax.swing.JLabel lblProcesador;
     private javax.swing.JLabel lblProcesadorImg;
     private javax.swing.JLabel lblRPC;
     private javax.swing.JLabel lblRPCT;

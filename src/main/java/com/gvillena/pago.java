@@ -40,19 +40,17 @@ public class pago extends javax.swing.JFrame {
         etMes = new javax.swing.JTextField();
         etNombreTitular = new javax.swing.JTextField();
         etNumeroTarjeta = new javax.swing.JTextField();
-        etCodigoSeguridad = new javax.swing.JTextField();
-        etDia = new javax.swing.JTextField();
         lbPagoConTarjeta = new javax.swing.JLabel();
         lbAceptamos = new javax.swing.JLabel();
-        spCiudad = new javax.swing.JSpinner();
         lbCiudad = new javax.swing.JLabel();
         lbImagenVisa = new javax.swing.JLabel();
-        lbMensajeConfirmar = new javax.swing.JLabel();
         jbtnvolver = new javax.swing.JButton();
         btnOtrometodopag1 = new javax.swing.JToggleButton();
         tipostj = new javax.swing.JLabel();
         jlblimagt = new javax.swing.JLabel();
         jtiptarjet = new javax.swing.JComboBox<>();
+        txtsc = new javax.swing.JTextField();
+        jpass = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -77,11 +75,7 @@ public class pago extends javax.swing.JFrame {
         lbAceptamos.setText("Aceptamos:");
 
         lbCiudad.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        lbCiudad.setText("Seleccione Ciudad");
-
-        lbMensajeConfirmar.setFont(new java.awt.Font("MS Reference Sans Serif", 1, 10)); // NOI18N
-        lbMensajeConfirmar.setForeground(new java.awt.Color(255, 0, 51));
-        lbMensajeConfirmar.setText("Confirm your order of 32,66 $ by clicking the button \"Confirm my order\"");
+        lbCiudad.setText("Nombre de la Ciudad");
 
         jbtnvolver.setText("Volver");
         jbtnvolver.setBorder(null);
@@ -116,7 +110,7 @@ public class pago extends javax.swing.JFrame {
 
         tipostj.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Untitled2.jpg"))); // NOI18N
 
-        jlblimagt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Scousha.jpg"))); // NOI18N
+        jlblimagt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Scotiabank.jpg"))); // NOI18N
 
         jtiptarjet.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jtiptarjet.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Otros Metodos de Pago", "Visa", "Master Card", "Interbank", "BCP" }));
@@ -149,14 +143,12 @@ public class pago extends javax.swing.JFrame {
                             .addComponent(lbCiudad))
                         .addGap(30, 30, 30)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(etNombreTitular, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(etNumeroTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(etCodigoSeguridad, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(etMes, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(44, 44, 44)
-                                .addComponent(etDia, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(spCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(etNombreTitular, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                                .addComponent(etNumeroTarjeta, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                                .addComponent(txtsc)
+                                .addComponent(etMes, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jpass, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(60, 60, 60)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -165,10 +157,7 @@ public class pago extends javax.swing.JFrame {
                             .addComponent(jlblimagt, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(40, 40, 40)
-                        .addComponent(jtiptarjet, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(lbMensajeConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 514, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jtiptarjet, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
@@ -184,42 +173,40 @@ public class pago extends javax.swing.JFrame {
                 .addComponent(lbPagoConTarjeta)
                 .addGap(11, 11, 11)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lbAceptamos)
-                        .addGap(16, 16, 16)
-                        .addComponent(tipostj)
-                        .addGap(11, 11, 11)
-                        .addComponent(lbNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
-                        .addComponent(lbNumeroTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(lbCodigoSeguridad, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(lbCaducidad, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(lbCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(62, 62, 62)
-                        .addComponent(etNombreTitular, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(etNumeroTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(etCodigoSeguridad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(etMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(etDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(20, 20, 20)
-                        .addComponent(spCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(lbImagenVisa, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(72, 72, 72)
-                        .addComponent(jlblimagt, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jlblimagt, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lbAceptamos)
+                                .addGap(16, 16, 16)
+                                .addComponent(tipostj)
+                                .addGap(11, 11, 11)
+                                .addComponent(lbNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, 0)
+                                .addComponent(lbNumeroTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(10, 10, 10)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(lbCodigoSeguridad, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(10, 10, 10)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(lbCaducidad, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(etMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(62, 62, 62)
+                                .addComponent(etNombreTitular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(etNumeroTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(10, 10, 10)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtsc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(40, 40, 40)
                 .addComponent(jtiptarjet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19)
-                .addComponent(lbMensajeConfirmar)
-                .addGap(16, 16, 16)
+                .addGap(49, 49, 49)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jbtnvolver, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnOtrometodopag1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -230,8 +217,12 @@ public class pago extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnOtrometodopag1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOtrometodopag1ActionPerformed
+     
         JOptionPane.showMessageDialog(null, "Gracias Por Comprar");
+       
         dispose();
+         formulario fr=new formulario();
+                fr.setVisible(true);
 
         // TODO add your handling code here:
     }//GEN-LAST:event_btnOtrometodopag1ActionPerformed
@@ -247,18 +238,18 @@ public class pago extends javax.swing.JFrame {
             
             switch (item){
                 case 1:
-                    ImageIcon imagen= new ImageIcon(this.getClass().getResource("/img/Untitled3_1.jpg"));
+                    ImageIcon imagen= new ImageIcon(this.getClass().getResource("/img/visa.jpg"));
                     jlblimagt.setIcon(imagen);
                     
                     break;
                     
                 case 2:
-                    ImageIcon imagen1= new ImageIcon(this.getClass().getResource("/img/MC.jpg"));
+                    ImageIcon imagen1= new ImageIcon(this.getClass().getResource("/img/master card.jpg"));
                     jlblimagt.setIcon(imagen1);
                     
                     break;
                 case 3:
-                    ImageIcon imagen2= new ImageIcon(this.getClass().getResource("/img/IBK.jpg"));
+                    ImageIcon imagen2= new ImageIcon(this.getClass().getResource("/img/Interbank.jpg"));
                     jlblimagt.setIcon(imagen2);
                     
                     break;
@@ -308,24 +299,22 @@ public class pago extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton btnOtrometodopag1;
-    private javax.swing.JTextField etCodigoSeguridad;
-    private javax.swing.JTextField etDia;
-    private javax.swing.JTextField etMes;
-    private javax.swing.JTextField etNombreTitular;
-    private javax.swing.JTextField etNumeroTarjeta;
+    public static javax.swing.JTextField etMes;
+    public static javax.swing.JTextField etNombreTitular;
+    public static javax.swing.JTextField etNumeroTarjeta;
     private javax.swing.JButton jbtnvolver;
     private javax.swing.JLabel jlblimagt;
+    private javax.swing.JPasswordField jpass;
     private javax.swing.JComboBox<String> jtiptarjet;
     private javax.swing.JLabel lbAceptamos;
     private javax.swing.JLabel lbCaducidad;
     private javax.swing.JLabel lbCiudad;
     private javax.swing.JLabel lbCodigoSeguridad;
     private javax.swing.JLabel lbImagenVisa;
-    private javax.swing.JLabel lbMensajeConfirmar;
     private javax.swing.JLabel lbNombre;
     private javax.swing.JLabel lbNumeroTarjeta;
     private javax.swing.JLabel lbPagoConTarjeta;
-    private javax.swing.JSpinner spCiudad;
     private javax.swing.JLabel tipostj;
+    public static javax.swing.JTextField txtsc;
     // End of variables declaration//GEN-END:variables
 }

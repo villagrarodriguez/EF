@@ -45,17 +45,15 @@
                       </Group>
                       <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="etNombreTitular" min="-2" pref="180" max="-2" attributes="0"/>
-                          <Component id="etNumeroTarjeta" min="-2" pref="180" max="-2" attributes="0"/>
-                          <Component id="etCodigoSeguridad" min="-2" pref="136" max="-2" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <Component id="etMes" min="-2" pref="46" max="-2" attributes="0"/>
-                              <EmptySpace min="44" pref="44" max="-2" attributes="0"/>
-                              <Component id="etDia" min="-2" pref="46" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="etNombreTitular" pref="180" max="32767" attributes="0"/>
+                              <Component id="etNumeroTarjeta" pref="180" max="32767" attributes="0"/>
+                              <Component id="txtsc" alignment="0" max="32767" attributes="0"/>
+                              <Component id="etMes" alignment="0" min="-2" pref="157" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="spCiudad" min="-2" pref="136" max="-2" attributes="0"/>
+                          <Component id="jpass" min="-2" pref="91" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="60" pref="60" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace min="161" pref="161" max="-2" attributes="0"/>
@@ -64,13 +62,9 @@
                           <Component id="jlblimagt" min="-2" pref="230" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
-                      <Component id="jtiptarjet" min="-2" pref="158" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
-                      <Component id="lbMensajeConfirmar" min="-2" pref="514" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="jtiptarjet" min="-2" pref="212" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="26" max="32767" attributes="0"/>
@@ -91,47 +85,49 @@
               <Component id="lbPagoConTarjeta" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="11" pref="11" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="lbAceptamos" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="16" pref="16" max="-2" attributes="0"/>
-                      <Component id="tipostj" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="11" pref="11" max="-2" attributes="0"/>
-                      <Component id="lbNombre" min="-2" pref="30" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                      <Component id="lbNumeroTarjeta" min="-2" pref="30" max="-2" attributes="0"/>
-                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                      <Component id="lbCodigoSeguridad" min="-2" pref="30" max="-2" attributes="0"/>
-                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                      <Component id="lbCaducidad" min="-2" pref="30" max="-2" attributes="0"/>
-                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                      <Component id="lbCiudad" min="-2" pref="30" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="62" pref="62" max="-2" attributes="0"/>
-                      <Component id="etNombreTitular" min="-2" pref="30" max="-2" attributes="0"/>
-                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                      <Component id="etNumeroTarjeta" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                      <Component id="etCodigoSeguridad" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="etMes" min="-2" max="-2" attributes="0"/>
-                          <Component id="etDia" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
-                      <Component id="spCiudad" min="-2" max="-2" attributes="0"/>
-                  </Group>
                   <Component id="lbImagenVisa" min="-2" pref="199" max="-2" attributes="0"/>
                   <Group type="102" attributes="0">
                       <EmptySpace min="72" pref="72" max="-2" attributes="0"/>
                       <Component id="jlblimagt" min="-2" pref="160" max="-2" attributes="0"/>
                   </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="lbAceptamos" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="16" pref="16" max="-2" attributes="0"/>
+                              <Component id="tipostj" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="11" pref="11" max="-2" attributes="0"/>
+                              <Component id="lbNombre" min="-2" pref="30" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="lbNumeroTarjeta" min="-2" pref="30" max="-2" attributes="0"/>
+                              <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lbCodigoSeguridad" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <Component id="jpass" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lbCaducidad" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <Component id="etMes" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+                              <Component id="etNombreTitular" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="etNumeroTarjeta" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="txtsc" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbCiudad" min="-2" pref="30" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
               </Group>
               <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
               <Component id="jtiptarjet" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="19" pref="19" max="-2" attributes="0"/>
-              <Component id="lbMensajeConfirmar" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="16" pref="16" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jbtnvolver" min="-2" pref="31" max="-2" attributes="0"/>
                   <Component id="btnOtrometodopag1" min="-2" pref="30" max="-2" attributes="0"/>
@@ -175,14 +171,19 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="etMes">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JTextField" name="etNombreTitular">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JTextField" name="etNumeroTarjeta">
-    </Component>
-    <Component class="javax.swing.JTextField" name="etCodigoSeguridad">
-    </Component>
-    <Component class="javax.swing.JTextField" name="etDia">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="lbPagoConTarjeta">
       <Properties>
@@ -206,28 +207,15 @@
         <Property name="text" type="java.lang.String" value="Aceptamos:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JSpinner" name="spCiudad">
-    </Component>
     <Component class="javax.swing.JLabel" name="lbCiudad">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Dialog" size="12" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Seleccione Ciudad"/>
+        <Property name="text" type="java.lang.String" value="Nombre de la Ciudad"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lbImagenVisa">
-    </Component>
-    <Component class="javax.swing.JLabel" name="lbMensajeConfirmar">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="MS Reference Sans Serif" size="10" style="1"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="33" green="0" red="ff" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Confirm your order of 32,66 $ by clicking the button &quot;Confirm my order&quot;"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="jbtnvolver">
       <Properties>
@@ -280,7 +268,7 @@
     <Component class="javax.swing.JLabel" name="jlblimagt">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/img/Scousha.jpg"/>
+          <Image iconType="3" name="/img/Scotiabank.jpg"/>
         </Property>
       </Properties>
     </Component>
@@ -305,6 +293,13 @@
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtsc">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JPasswordField" name="jpass">
     </Component>
   </SubComponents>
 </Form>
