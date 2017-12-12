@@ -573,11 +573,11 @@ public class Tiendita extends javax.swing.JFrame {
             switch (indiceSeleccionado){
                 
                   case 0:
-                      labelprecio.setText("Precio :");
+                      jnombreprecio.setText("Precio :");
                     labelprecio.setText("S/ 3.200");
                     break;
                   case 1:
-                       labelprecio.setText("Precio :");
+                       jnombreprecio.setText("Precio :");
                     labelprecio.setText("S/ 2.530");
                     break;
                     
